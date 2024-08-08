@@ -1,0 +1,17 @@
+document vs window
+
+window: la ventana del navegador y el contenedor de todo.
+
+document: el contenido del documento HTML dentro de la ventana.
+
+*1* si se requiere mayor velocidad se debe utilizar las diferentes etiquetas get elements
+
+document.queryselector("") -> deja utilizar tanto clases, Id's y etiquetas con los selectores de css
+
+   ID queryselector("#idelement")
+
+   class queryselector(".classElement")
+
+   <etiqueta/> queryselector("<tagElement/>") 
+    Selecciona todos los elementos que tienen un nombre de etiqueta específico
+
