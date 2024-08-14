@@ -6,12 +6,70 @@ document: el contenido del documento HTML dentro de la ventana.
 
 *1* si se requiere mayor velocidad se debe utilizar las diferentes etiquetas get elements
 
-document.queryselector("") -> deja utilizar tanto clases, Id's y etiquetas con los selectores de css
+------------------- seleccionar elementos del DOM
 
-   ID queryselector("#idelement")
 
-   class queryselector(".classElement")
+      const title = document.querySelector('#app-title')
 
-   <etiqueta/> queryselector("<tagElement/>") 
+   document.querySelectorAll -> regresa un nodelist con todos los elementod que cumplanm con una codicion
+
+-
+
+----------------queryselector 
+
+   document.queryselector("") -> deja utilizar tanto clases, Id's y etiquetas con los selectores de css
+   siempre trael al primer elementop que cumpla con esa propiedad
+
+   ID document.queryselector("#idelement")
+
+   class document.queryselector(".classElement")
+
+   <etiqueta/> document.queryselector("<tagElement/>") 
     Selecciona todos los elementos que tienen un nombre de etiqueta específico
+-
+
+------------- get elements
+
+   document.getElementById ()
+
+   document.getElementByclassName ()
+
+   document.getElementByTagName ()
+
+-----------------Navegar entre NODOS  Transversing DOM------------------------------------------------
+   <BISABUELO>
+      <hermano del abuelo/>
+      <ABUELO>
+         <hermano del padre 1/>
+         <padre>
+            primer-hijo
+            segundo-hijo
+            tercer-hijo
+            cuarto-hijo
+         <padre/>
+         <hermano del padre2/>
+      <ABUELO/>
+   <BISABUELO/>
+
+   
+
+   const padre = padre
+
+   padre.children -> trae los hijos que el elemento referencia contenga "Todos sus hijos"
+
+   padre.firstElementChild -> traer el primer elemento hijo "primer-hijo"
+
+   padre.lastElementChild -> trae al ultimo hijo
+
+   padre.previousElementSibling->trae al familiar cercano anterior del padre que este en la misma linea, mas no que no sea padadre del padre, si este no tiene hermanos aparece null
+
+   padre.nextElementSibling -> trae al hermano postereior del padre
+
+   padre.parentNode -> trae al elemento padre del elemento "abuelo"
+   
+   padre.closest(BISABUELO) -> trae la etiqueta mas cercana especificada del elemento referencia que este por encima
+
+   si en la etiqueta ponemos hermano del abuelo aparece null
+         
+
 

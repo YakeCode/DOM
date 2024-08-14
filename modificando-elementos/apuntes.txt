@@ -1,0 +1,51 @@
+---------------------------Modificcando atributos y propiedades
+    Atributos -> todas las cosas que les vamos a agregar a una etiqueta html y son el estado inicial del html
+
+            <input value="Nombre"> -> value = atributo
+
+        value
+        type
+        class
+        id
+        href
+
+    propiedades -> son el reflejo de estos atributos en JavaScript. Es decir, van a pasar a ser propiedades del objeto del nodo en JS. y al modificarsen por html se vuelven propiedades
+
+
+    <input value="Nombre">
+
+    const input = document.getElementById("input-id")
+
+    input.value = apellido -> en el html seguira apareciendo igual pero el valor de su value en la node list sera apellido y a este se le llamara PROPIEDAD
+
+-------------------------------------- MODIFICANDO TEXTO-----------------------------------
+    
+    <h1 id="app-title">Soy el header de esta app</h1>
+
+       * title.textContent = 'nuevo titulo' = <h1>nuevo titulo<h1>
+       *title.innerText = 'segundo nuevo titulo' = <h1>segundo nuevo titulo<h1>
+
+----------------------------------------Modificando Estilos----------------
+    para nodificar estulos por js tenemos la etiqueta style, esto generara estilis en el html en linea, lo cual hara que tome los de el archivo css
+
+    for (let i = 0; i < menus.length; i++) {
+        menus[i].style.backgroundColor = 'gray';
+    }
+
+    <menu class="menu" style = background-Color : gray>
+
+    function esInvisible (){
+    header.classList.toggle("invisible")
+    }
+
+    button.addEventListener('click', esInvisible ) 
+
+    elemento.className = 'nombre de la nueva clase ' -> para cambiar todas las clases de un elemento 
+
+    elemento.classList.add ('nombre de la nueva clase') para agregar una clase sin modifocar la existente se utiliza
+
+    elemento.classlist.replace ('claseARemplazar, claseAingresar')
+
+    elemento.classList.toggle(claseAvalidar') -> lo que hace es un swich, lo que significa si esta la clase, si esta la quita al hacer click o si no esta, la agrega
+
+    elemento.contains -> devuelve true o false dependiendio si contiene algo o no

@@ -1,5 +1,5 @@
 # DOM
 
-Curso Manipulacion del #DOM# Apuntes
+Curso Manipulacion del *DOM* Apuntes
 
 
