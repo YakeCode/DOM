@@ -70,6 +70,8 @@ document: el contenido del documento HTML dentro de la ventana.
    padre.closest(BISABUELO) -> trae la etiqueta mas cercana especificada del elemento referencia que este por encima
 
    si en la etiqueta ponemos hermano del abuelo aparece null
+
+   padre.children[posicion del hijo] -> trae la posicion del hijo que le pongamos 
          
 
 

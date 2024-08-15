@@ -48,4 +48,6 @@
 
     elemento.classList.toggle(claseAvalidar') -> lo que hace es un swich, lo que significa si esta la clase, si esta la quita al hacer click o si no esta, la agrega
 
+            ENCIENDE O APAGA UNA CLASE ESPECIFICA
+
     elemento.contains -> devuelve true o false dependiendio si contiene algo o no

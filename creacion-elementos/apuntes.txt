@@ -1,0 +1,91 @@
+------------crear o eliminar elementos-----------------------
+    HTML Strings
+
+        innerHTML -> genermos un string y lo inyectamos al DOM y modifica el texto actual del elemento seleccionado
+
+        
+        const contentArea = document.getElementById('contentArea')
+
+        contentArea.innerHTML= '<p>Nuevo p</p>'
+
+        si no deseamos cambiar el texto actual y agregar innerHTML lo podemos hacer con 
+                element.innerHTML+=
+            esto creara un nuevo elemento al final, pero por temas de performance no es recomendado
+
+        const list = document.getElementById('listArea')
+        list.innerHTML+= '<li>elemento 5 - mal performance</li>'
+
+        -----------------------------------------------------------------------
+
+
+        insertAdjacentHTML-> enermos un string y lo inyectamos al DOM dejando elegir su pocision
+
+            element.insertAdjacentHTML(posición, texto);
+
+            'beforebegin': Antes que el propio elemento.
+            'afterbegin': Justo dentro del elemento, antes de su primer elemento hijo.
+            'beforeend': Justo dentro del elemento, después de su último elemento hijo.
+            'afterend': Después del propio elemento.
+
+                <!-- beforebegin --> primera posicion
+                <p>
+                <!-- afterbegin --> segunda posicion
+                foo
+                <!-- beforeend --> tercera posicion
+                </p>
+                <!-- afterend --> cuarta posicion
+
+             Las posiciones beforebegin y afterend funcionan únicamente si el nodo se encuentra en el árbol DOM y tiene un elemento padre.
+
+            const contentArea = document.getElementById('contentArea')
+
+            contentArea.insertAdjacentHTML('beforeend', '<p>este no modifico el texto original</p>')//posicion, elemento a ingresar
+
+
+------------------------------Create Element-----------------------------------
+
+    CreateElements nos deja crear un nuevo nodo, puede ser texto o algo mas
+
+    *crea la etiqueta
+
+        const newPElement =document.createElement('p')
+
+    *ingresa contenido a la etiqueta
+
+        newPElement.textContent = 'soy p con document.createElement'
+
+    *inyectar en el HTML
+        enQueEtiqueta.append(nombre de la variable que vamos a inyectar)
+            contentArea.append(newPElement) -> lo inyecta como el siguiente
+        APPEND
+            Inserta el nuevo elemento al final del contenido de un elemento padre.
+        PREPEND
+            Inserta el nuevo elemento al inicio del contenido de un elemento padre.
+        BEFORE
+            Inserta el nuevo elemento antes del elemento en el que se llama.
+        AFTER
+            inserta un nuevo elemento justo después del elemento en el que se aplica. No afecta el contenido dentro del elemento, sino que agrega el nuevo elemento como un hermano (sibling) del elemento existente, colocándolo inmediatamente después en el orden del DOM.
+
+--------------------------------- Remove-------------------------
+
+    elemento.remove()
+
+    elemento.removeChild() especificar a traves del transversing DOM
+
+--------------------------------Clone Node---------------
+
+    .cloneNode (true)-> clona el nodo que yole estoy diciendo
+
+        const clon = contentArea.cloneNode(true)
+
+        console.log(clon)
+
+    
+    elemento a remplazar.replaceWhith(con el que lo remplazare)
+
+        const pes = document.createElement('p')
+
+        pes.textContent= 'p para remplaxzar el p anterior'
+
+        contentArea.lastElementChild.replaceWith(pes)
+
